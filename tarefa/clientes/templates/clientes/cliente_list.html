@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista de Cliente</title>
+    </head>
+    <body>
+        <h1>Lista de Clientes</h1>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Cidade</th>
+            </tr>
+            {% for cliente in clientes %}
+            <tr>
+                <td><a href="{% url 'cliente_detail' cliente.pk %}">{{ cliente.nome }}</a></td>
+                <td>{{ cliente.sobrenome }}</td>
+                <td>{{ cliente.cidade }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DJango - Index</title>
+    </head>
+    <body>
+        <h1>Index</h1>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+            </tr>
+            {% for produto in produtos %}
+            <tr>
+                <td><a href="{% url 'url_produto_detalhes' produto.id %}"> {{ produto.nome }} </a></td>
+                <td>{{ produto.preco }}</td>
+                <td>{{ produto.estoque }}</td>
+                
+
+            </tr>
+            {% endfor %}
+        </table>
+
+    </body>
+</html>
