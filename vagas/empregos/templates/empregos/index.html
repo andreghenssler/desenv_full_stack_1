@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Index</title>
+    </head>
+    <body>
+        <h1>Lista de Vagas</h1>
+        <div>
+            <a href="{% url 'formulario_vaga' %}">Cadastrar Nova Vaga</a>
+        </div>
+        <div>
+            <a href="{% url 'formulario_candidato' %}">Cadastrar Candidato</a>
+        </div>
+        
+        <div>
+            <a href="{% url 'lista_candidatos' %}">Lista Candidato</a>
+        </div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th >Título</th>
+                    <th>Descrição</th>
+                    <th>Data de Publicação</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for vaga in vagas %}
+                <tr>
+                    <td>{{ vaga.titulo }}</td>
+                    <td>{{ vaga.descricao }}</td>
+                    <td>{{ vaga.data_publicacao }}</td>
+                    <td><a href="{% url 'detalhes_vaga' vaga.id %}">Ver Detalhes</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        
+    </body>
+</html>

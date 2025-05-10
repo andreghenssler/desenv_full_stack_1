@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h2>{{ vaga.titulo }}</h2>
+        <div>
+            <a href="{% url 'index' %}">Voltar</a>
+        </div>
+        <p><b>Área:</b> {{ vaga.get_area_display }}</p>
+        <p><b>Tipo de contrato:</b> {{ vaga.get_tipo_display }}</p>
+        <p><b>Descrição:</b> </p>
+        <p>{{ vaga.descricao }}</p>
+        
+
+    </body>
+</html>

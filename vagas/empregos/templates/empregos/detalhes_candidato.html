@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h2>Detalhes do Candidato</h2>
+        <div>
+            <a href="{% url 'lista_candidatos' %}">Voltar</a>
+        </div>
+        <p><strong>Nome:</strong> {{ candidato.nome }}</p>
+        <p><strong>Sobrenome:</strong> {{ candidato.sobrenome }}</p>
+        <p><strong>Email:</strong> {{ candidato.email }}</p>
+        <p><strong>Telefone:</strong> {{ candidato.telefone }}</p>
+        <p><strong>Data de Nascimento:</strong> {{ candidato.data_nascimento }}</p>
+        <p><strong>Gênero:</strong> {{ candidato.get_genero_display }}</p>
+        <p><strong>Escolaridade</strong>:</strong> {{ candidato.get_escolaridade_display }}</p>
+        
+        
+        
+    </body>
+</html>
